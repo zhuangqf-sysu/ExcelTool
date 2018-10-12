@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public enum ExportHeaderType {
 
-    NUMBER, DATE, DATETIME, TIME, STRING, BOOLEAN;
+    NUMBER, DATE, DATETIME, TIME, STRING, BOOLEAN, MONTH, YEAR;
 
     private static final Map<String, ExportHeaderType> mapper = new HashMap<>();
 
