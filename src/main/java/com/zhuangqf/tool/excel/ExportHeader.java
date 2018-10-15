@@ -14,6 +14,8 @@ public class ExportHeader<T, R> {
     private String title;
     private ExportHeaderType type = ExportHeaderType.STRING;
     private boolean required = false;
+    private boolean id = false;
+    private boolean hidden = false;
     private Function<T, R> formatter;
 
     public ExportHeader(String field, String title) {
@@ -76,6 +78,29 @@ public class ExportHeader<T, R> {
 
     public void setFormatter(Function<T, R> formatter) {
         this.formatter = formatter;
+    }
+
+    public ExportHeader setType(ExportHeaderType type) {
+        this.type = type;
+        return this;
+    }
+
+    public boolean isId() {
+        return id;
+    }
+
+    public ExportHeader setId(boolean id) {
+        this.id = id;
+        return this;
+    }
+
+    public boolean isHidden() {
+        return hidden;
+    }
+
+    public ExportHeader setHidden(boolean hidden) {
+        this.hidden = hidden;
+        return this;
     }
 
     public CellType getCellType() {
