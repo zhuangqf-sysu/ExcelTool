@@ -19,11 +19,13 @@ public enum ExportHeaderType {
         mapper.put("date", DATE);
         mapper.put("datetime", DATETIME);
         mapper.put("time", TIME);
+        mapper.put("month", MONTH);
+        mapper.put("year", YEAR);
         Arrays.asList("bool", "boolean").forEach(key -> mapper.put(key, BOOLEAN));
     }
 
     public static ExportHeaderType fromString(String name) {
-        name = name.toUpperCase();
+        name = name.toLowerCase();
         return mapper.getOrDefault(name, STRING);
     }
 }
